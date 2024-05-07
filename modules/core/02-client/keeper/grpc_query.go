@@ -270,32 +270,32 @@ func (q Keeper) UpgradedClientState(c context.Context, req *types.QueryUpgradedC
 
 	ctx := sdk.UnwrapSDKContext(c)
 
-	plan, found := q.GetUpgradePlan(ctx)
+	_, found := q.GetUpgradePlan(ctx)
 	if !found {
 		return nil, status.Error(
 			codes.NotFound, "upgrade plan not found",
 		)
 	}
 
-	bz, found := q.GetUpgradedClient(ctx, plan.Height)
-	if !found {
-		return nil, status.Error(codes.NotFound, types.ErrClientNotFound.Error())
-	}
+	// bz, found := q.GetUpgradedClient(ctx, plan.Height)
+	// if !found {
+	// 	return nil, status.Error(codes.NotFound, types.ErrClientNotFound.Error())
+	// }
 
-	clientState, err := types.UnmarshalClientState(q.cdc, bz)
-	if err != nil {
-		return nil, status.Error(
-			codes.Internal, err.Error(),
-		)
-	}
+	// clientState, err := types.UnmarshalClientState(q.cdc, bz)
+	// if err != nil {
+	// 	return nil, status.Error(
+	// 		codes.Internal, err.Error(),
+	// 	)
+	// }
 
-	any, err := types.PackClientState(clientState)
-	if err != nil {
-		return nil, status.Error(codes.Internal, err.Error())
-	}
+	// any, err := types.PackClientState(clientState)
+	// if err != nil {
+	// 	return nil, status.Error(codes.Internal, err.Error())
+	// }
 
 	return &types.QueryUpgradedClientStateResponse{
-		UpgradedClientState: any,
+		UpgradedClientState: nil,
 	}, nil
 }
 

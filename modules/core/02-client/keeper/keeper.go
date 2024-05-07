@@ -343,14 +343,14 @@ func (k Keeper) ValidateSelfClient(ctx sdk.Context, clientState exported.ClientS
 }
 
 // GetUpgradePlan executes the upgrade keeper GetUpgradePlan function.
-func (k Keeper) GetUpgradePlan(ctx sdk.Context) (plan upgradetypes.Plan, havePlan bool) {
+func (k Keeper) GetUpgradePlan(ctx sdk.Context) (plans []*upgradetypes.Plan, havePlan bool) {
 	return k.upgradeKeeper.GetUpgradePlan(ctx)
 }
 
 // GetUpgradedClient executes the upgrade keeper GetUpgradeClient function.
-func (k Keeper) GetUpgradedClient(ctx sdk.Context, planHeight int64) ([]byte, bool) {
-	return k.upgradeKeeper.GetUpgradedClient(ctx, planHeight)
-}
+// func (k Keeper) GetUpgradedClient(ctx sdk.Context, planHeight int64) ([]byte, bool) {
+// 	return k.upgradeKeeper.GetUpgradedClient(ctx, planHeight)
+// }
 
 // GetUpgradedConsensusState returns the upgraded consensus state
 func (k Keeper) GetUpgradedConsensusState(ctx sdk.Context, planHeight int64) ([]byte, bool) {

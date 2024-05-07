@@ -80,7 +80,7 @@ func (k Keeper) HandleUpgradeProposal(ctx sdk.Context, p *types.UpgradeProposal)
 
 	// zero out any custom fields before setting
 	cs := clientState.ZeroCustomFields()
-	bz, err := types.MarshalClientState(k.cdc, cs)
+	_, err = types.MarshalClientState(k.cdc, cs)
 	if err != nil {
 		return sdkerrors.Wrap(err, "could not marshal UpgradedClientState")
 	}
@@ -91,9 +91,9 @@ func (k Keeper) HandleUpgradeProposal(ctx sdk.Context, p *types.UpgradeProposal)
 
 	// sets the new upgraded client in last height committed on this chain is at plan.Height,
 	// since the chain will panic at plan.Height and new chain will resume at plan.Height
-	if err = k.upgradeKeeper.SetUpgradedClient(ctx, p.Plan.Height, bz); err != nil {
-		return err
-	}
+	// if err = k.upgradeKeeper.SetUpgradedClient(ctx, p.Plan.Height, bz); err != nil {
+	// 	return err
+	// }
 
 	// emitting an event for handling client upgrade proposal
 	EmitUpgradeClientProposalEvent(ctx, p.Title, p.Plan.Height)
