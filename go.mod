@@ -16,7 +16,7 @@ require (
 	github.com/armon/go-metrics v0.4.1
 	github.com/cometbft/cometbft v0.37.2
 	github.com/cometbft/cometbft-db v0.8.0
-	github.com/cosmos/cosmos-proto v1.0.0-beta.2
+	github.com/cosmos/cosmos-proto v1.0.0-beta.5
 	github.com/cosmos/cosmos-sdk v0.47.3
 	github.com/cosmos/gogoproto v1.4.10
 	github.com/cosmos/ics23/go v0.10.0
@@ -27,10 +27,10 @@ require (
 	github.com/spf13/cast v1.5.1
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/viper v1.16.0
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 	google.golang.org/genproto v0.0.0-20230410155749-daa745c078e1
 	google.golang.org/grpc v1.55.0
-	google.golang.org/protobuf v1.30.0
+	google.golang.org/protobuf v1.33.0
 	gopkg.in/yaml.v2 v2.4.0
 )
 
@@ -89,7 +89,7 @@ require (
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
-	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/orderedcode v0.0.1 // indirect
 	github.com/google/s2a-go v0.1.3 // indirect
 	github.com/google/uuid v1.3.0 // indirect
@@ -168,7 +168,7 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	nhooyr.io/websocket v1.8.6 // indirect
-	pgregory.net/rapid v0.5.5 // indirect
+	pgregory.net/rapid v1.1.0 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
 
